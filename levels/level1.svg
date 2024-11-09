@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="1920" height="1280" viewBox="0 0 1920 1280" version="1.2" id="SVGRoot" xmlns="http://www.w3.org/2000/svg">
-    <rect id="sky" style="fill:#dfe3ec;" width="1920" height="1280" x="0" y="0" />
-    <path id="hitbox" style="fill:#b6bfc9;" d="M -100,960 H 2020 V 1280 H -100 Z" />
-    <circle id="spawnpoint" cx="320" cy="960" />
-</svg>
