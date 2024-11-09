@@ -1,36 +1,21 @@
 # Gameplay
-- [x] Game idea
-- [x] Death
+- [ ] Game idea (IN-PROGRESS)
 
 ## Movement
+- [ ] Movement
 - [ ] Collision
-	- [x] Detection (IN-PROGRESS)
-	- [x] Resolution (IN-PROGRESS)
-- [x] Gravity
-- [x] Friction (INCOMPLETE)
-- [ ] Sticking?
 
 ## Controls
-- [ ] Figure out controls (IN-PROGRESS)
-	- [ ] Implement controls (IN-PROGRESS)
-- [x] Rotation (IN-PROGRESS)
-- [x] Sliding
-
-## Levels
-- [x] Multi-level support
-- [x] Storage format
-	- [x] Load levels
-	- [x] Terrain
-	- [x] Spawn point
-- [x] Display levels
+- [ ] Figure out controls
+	- [ ] Implement controls
 
 # Experience
-- [ ] Title (PLACEHOLDER)
+- [x] Title
 
 ## Graphics
-- [x] Menu image (INCOMPLETE)
-- [x] Teaser image (INCOMPLETE)
-- [x] Font (POSSIBLY PLACEHOLDER)
+- [ ] Menu image
+- [ ] Teaser image
+- [ ] Font
 - [ ] Terrain art
 - [ ] Character art
 

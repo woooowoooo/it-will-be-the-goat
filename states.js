@@ -80,8 +80,8 @@ const stateMachine = new StateMachine({
 			objects.set("background", new Drawable(() => context.drawImage(images.background, 0, 0, 1920, 1280)));
 			objects.set("title", new Drawable(() => {
 				context.fillStyle = colors.text;
-				context.fontSize = 20;
-				context.fillText("Frozen Game", 960, 360);
+				context.fontSize = 16;
+				context.fillText("“It Will Be the GoAT”", 960, 360);
 			}));
 			objects.set("start", new TextButton(960, 560, "Start", stateMachine.start, 640));
 			objects.set("settings", new TextButton(960, 720, "Settings", stateMachine.toSettings, 640));
@@ -119,9 +119,6 @@ const stateMachine = new StateMachine({
 				context.fillStyle = colors.text;
 				context.fontSize = 6;
 				context.fillText("This game is a work-in-progress. There will be bugs!", 960, 280);
-				context.fillText("← and → move left and right.", 960, 400);
-				context.fillText("↑ and ↓ (or X and Z) rotate clockwise and counterclockwise.", 960, 520);
-				context.fillText("Press R to restart the level and ESC to exit or restart the game.", 960, 640);
 			}));
 			objects.set("return", new TextButton(960, 880, "Return", stateMachine.toMenu, 640));
 			objects.set("mute", new MuteButton());
