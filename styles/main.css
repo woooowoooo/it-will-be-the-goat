@@ -1,0 +1,53 @@
+* {
+	box-sizing: border-box;
+}
+:root {
+	color-scheme: light dark;
+	--primary-color: seashell;
+	--secondary-color: hsl(30, 5%, 15%);
+	--text-color: hsl(30, 5%, 15%);
+	--accent-color: orangered;
+	--font-stack: Avenir, Futura, "Century Gothic", "URW Gothic", sans-serif;
+}
+body {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	background-color: var(--secondary-color);
+	color: var(--text-color);
+	font: 18px var(--font-stack);
+}
+header {
+	width: 100%;
+	padding: 10px 0 15px;
+	background-color: var(--primary-color);
+	text-align: center;
+	line-height: 1;
+	color: var(--text-color);
+}
+canvas {
+	min-height: 0;
+	max-width: 100vw;
+}
+a {
+	color: var(--accent-color);
+	font-weight: bold;
+	text-decoration: none;
+}
+p {
+	margin: 0.5em 0;
+}
+@font-face {
+	font-family: "Raleway";
+	src: url("../fonts/raleway.woff2") format("woff2");
+}
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary-color: hsl(30, 10%, 10%);
+		--secondary-color: hsl(30, 5%, 15%);
+		--text-color: linen;
+		--accent-color: gold;
+	}
+}
