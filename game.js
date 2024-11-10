@@ -5,6 +5,7 @@ const RADIUS = 50;
 const GRAVITY = 1500; // px / sec^2
 const FRICTION = 500; // px / sec^2
 const SPEED = 1000; // px / sec^2
+const JUMP_SPEED = 750; // px / sec^2
 const MAX_SPEED = 750; // px / sec
 // Collision
 const COLLISION_POINTS = [
@@ -165,6 +166,10 @@ export function handle({key}) {
 	if (key === "Escape") {
 		heldKeys.clear();
 		endGame();
+	} else if (key === "ArrowUp") {
+		if (collisionCheck().some(Boolean)) {
+			character.speed.y -= JUMP_SPEED;
+		}
 	}
 }
 function handleHeld(deltaTime) {
