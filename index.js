@@ -22,6 +22,7 @@ const mouse = {
 };
 const images = {};
 const sounds = {};
+const levels = {};
 const stateMachines = {
 	main: null
 };
@@ -98,6 +99,7 @@ export async function loadResources() {
 		goldbergVar1: "mp3",
 		death: "mp3"
 	};
+	const levelAmount = 4;
 	const promises = [];
 	const initialize = function (cache, id, path, type, eventType) {
 		cache[id] = document.createElement(type);
@@ -114,6 +116,14 @@ export async function loadResources() {
 		sounds[name].preload = "auto";
 		sounds[name].muted = settings.muted;
 		sounds[name].volume = settings.volume / 100;
+	}
+	for (let i = 1; i <= levelAmount; i++) {
+		promises.push(new Promise(async resolve => { // "Inline" SVG for hitbox
+			const levelFile = await window.fetch(`levels/level${i}.svg`).then(response => response.text());
+			levels[`level${i}`] = (new DOMParser()).parseFromString(levelFile, "image/svg+xml");
+			resolve();
+		}));
+		initialize(images, `level${i}`, `levels/level${i}.svg`, "img", "load"); // Image element for graphical rendering
 	}
 	return Promise.all(promises);
 }
@@ -294,4 +304,4 @@ export class TextInput extends Button {
 		self = this;
 	}
 }
-export {canvas, context, colors, images, sounds, stateMachines, objects, settings};
+export {canvas, context, colors, images, sounds, levels, stateMachines, objects, settings};

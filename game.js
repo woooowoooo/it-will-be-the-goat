@@ -1,4 +1,4 @@
-import {context, colors, images, sounds, stateMachines, objects, settings, Drawable} from "./index.js";
+import {context, colors, images, sounds, levels, stateMachines, objects, settings, Drawable} from "./index.js";
 // Constants
 const RADIUS = 50;
 // Linear speed
