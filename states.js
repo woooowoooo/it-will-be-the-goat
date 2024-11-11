@@ -81,7 +81,7 @@ const stateMachine = new StateMachine({
 			objects.set("title", new Drawable(() => {
 				context.fillStyle = colors.text;
 				context.fontSize = 16;
-				context.fillText("“It Will Be the GoAT”", 960, 360);
+				context.fillText("“it will be the goat”", 960, 360);
 			}));
 			objects.set("start", new TextButton(960, 560, "Start", stateMachine.start, 640));
 			objects.set("settings", new TextButton(960, 720, "Settings", stateMachine.toSettings, 640));
