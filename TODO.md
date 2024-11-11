@@ -2,22 +2,19 @@
 - [ ] Game idea (IN-PROGRESS)
 
 ## Movement
-- [ ] Movement
+- [x] Movement
 - [ ] Collision
-
-## Controls
-- [ ] Figure out controls
-	- [ ] Implement controls
+- [ ] Controls
 
 # Experience
 - [x] Title
 
 ## Graphics
 - [ ] Menu image
-- [ ] Teaser image
-- [ ] Font
-- [ ] Terrain art
-- [ ] Character art
+- [x] Teaser image
+- [x] Font (PLACEHOLDER)
+- [x] Terrain art
+- [x] Character art
 
 ## Music
 - [ ] Menu theme (PLACEHOLDER)
