@@ -1,6 +1,8 @@
 import {context, colors, images, sounds, levels, stateMachines, objects, settings, Drawable} from "./index.js";
 // Constants
-const RADIUS = 50;
+// Character size
+const WIDTH = 200;
+const HEIGHT = 160;
 // Linear speed
 const GRAVITY = 1500; // px / sec^2
 const FRICTION = 500; // px / sec^2
@@ -41,8 +43,7 @@ class Character extends Drawable {
 	constructor (x = 0, y = 0) {
 		changed = true;
 		function draw() {
-			context.fillStyle = colors.character;
-			context.fillRect(this.center.x - RADIUS, this.center.y - RADIUS, 2 * RADIUS, 2 * RADIUS);
+			context.drawImage(images.goat, this.center.x - WIDTH / 2, this.center.y - HEIGHT / 2, WIDTH, HEIGHT);
 		}
 		super(draw);
 		this.center = {x, y};
@@ -73,7 +74,7 @@ class Character extends Drawable {
 }
 // Collision
 function collisionCheck() {
-	return COLLISION_POINTS.map(([x, y]) => context.isPointInPath(hitbox, character.center.x + x * RADIUS, character.center.y + y * RADIUS));
+	return COLLISION_POINTS.map(([x, y]) => context.isPointInPath(hitbox, character.center.x + x * WIDTH / 2, character.center.y + y * HEIGHT / 2));
 }
 function collisionResolve() {
 	// Rough resolution
@@ -143,7 +144,7 @@ function newLevel(number) {
 	const pathText = level.getElementById("hitbox").getAttribute("d");
 	hitbox = new Path2D(pathText);
 	const spawnpoint = level.getElementById("spawnpoint"); // Spawnpoint is bottom center
-	character = new Character(Number.parseFloat(spawnpoint.getAttribute("cx")), Number.parseFloat(spawnpoint.getAttribute("cy")) - RADIUS);
+	character = new Character(Number.parseFloat(spawnpoint.getAttribute("cx")), Number.parseFloat(spawnpoint.getAttribute("cy")) - HEIGHT / 2);
 }
 function endGame(win) {
 	if (!win) {
@@ -189,7 +190,7 @@ export function update(deltaTime) {
 	// Update game state
 	character.update(deltaTime);
 	// New level
-	if (character.center.x - RADIUS > 1920) {
+	if (character.center.x - WIDTH / 2 > 1920) {
 		newLevel(levelNumber + 1);
 	}
 	return changed;

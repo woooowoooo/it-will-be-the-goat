@@ -92,7 +92,8 @@ export async function loadResources() {
 	const imageData = {
 		background: "png",
 		soundOff: "png",
-		soundOn: "png"
+		soundOn: "png",
+		goat: "svg"
 	};
 	const soundData = {
 		goldbergAria: "mp3",
