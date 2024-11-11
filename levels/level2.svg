@@ -11,6 +11,6 @@
 		</pattern>
 	</defs>
 	<rect id="sky" style="fill: url(#sky-pattern);" width="1920" height="1280" x="0" y="0" />
-	<path id="hitbox" style="fill: url(#grass-pattern);" d="M -100,960 h 740 l 640,-320 h 740 V 1280 H -100 Z" />
+	<path id="hitbox" style="fill: url(#grass-pattern);" d="M -100,0 H 0 v 960 h 2020 v 320 H -100 Z" />
 	<circle id="spawnpoint" cx="100" cy="960" />
 </svg>

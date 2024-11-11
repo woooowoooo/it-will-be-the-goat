@@ -10,7 +10,11 @@
 			<path id="parallelogram" style="fill: #66cc00;" d="M 10,10 H 20 L 15,20 H 5 Z M 5,0 H 15 L 10,10 H 0 Z" />
 		</pattern>
 	</defs>
-	<rect id="sky" style="fill: url(#sky-pattern);" width="1920" height="1280" x="0" y="0" />
-	<path id="hitbox" style="fill: url(#grass-pattern);" d="M -100,960 h 740 l 640,-320 h 740 V 1280 H -100 Z" />
-	<circle id="spawnpoint" cx="100" cy="960" />
+	<rect id="sky" style="fill: url(#sky-pattern)" width="1920" height="1280" x="0" y="0" />
+	<path id="hitbox" style="fill: url(#grass-pattern)" d="
+		M -100,320 h 740 v 80 h -740 Z
+		M 1280,560 h 480 v -240 h 260 v 320 h -740 Z
+		M -100,800 h 740 v 80 h -740 Z
+		M 1280,1040 h 740 v 80 h -740 z" />
+	<circle id="spawnpoint" cx="100" cy="320" />
 </svg>
