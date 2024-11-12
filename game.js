@@ -167,6 +167,8 @@ export function handle({key}) {
 	if (key === "Escape") {
 		heldKeys.clear();
 		endGame();
+	} else if (key === "r" || key === "R") {
+		newLevel(levelNumber);
 	} else if (key === "ArrowUp") {
 		if (collisionCheck().some(Boolean)) {
 			character.speed.y -= JUMP_SPEED;
@@ -189,6 +191,12 @@ export function update(deltaTime) {
 	handleHeld(deltaTime);
 	// Update game state
 	character.update(deltaTime);
+	// Restart upon fall
+	if (character.center.y - HEIGHT / 2 > 1280) {
+		console.log("You fell");
+		sounds.death.play();
+		newLevel(levelNumber);
+	}
 	// New level
 	if (character.center.x - WIDTH / 2 > 1920) {
 		newLevel(levelNumber + 1);
