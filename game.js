@@ -106,7 +106,7 @@ function drawDebugText() {
 		Speed: `${character.speed.x.toFixed(2)}, ${character.speed.y.toFixed(2)}`,
 		Contacts: `${collisionCheck().some(Boolean) ? "T" : "F"}: ${collisionCheck().map((value) => value ? "T" : "F")}`,
 		FPS: `${fps.toFixed(2)}`,
-		Time: `${time / 1000} seconds`
+		Time: `${(time / 1000).toFixed(3)} seconds`
 	};
 	let textY = DEBUG_Y - (Object.keys(texts).length - 1) * DEBUG_LINE_HEIGHT;
 	for (const [key, value] of Object.entries(texts)) {
