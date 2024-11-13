@@ -3,11 +3,13 @@
 	<rect id="sky" x="0" y="0" width="1920" height="1280" />
 	<path id="hitbox" d="M -100,0 H 0 v 960 h 2020 v 320 H -100 Z" />
 	<circle id="spawnpoint" cx="320" cy="960" />
-	<text class="dialogue dev" style="line-height: 1.25; white-space: pre-line;" x="960" y="480">welcome to goat game
-you are the goat
-move around and do stuff idk
-i’ll finish this up soon
-i hope that one day,
-it will be the game of all time</text>
+	<text class="dialogue dev" x="960" y="480">welcome to goat game
+		<!-- 1. first line not in tspan because dy offset would be 0 2. x and dy cannot be set in CSS sadly -->
+		<tspan x="960" dy="1.25em">you are the goat</tspan>
+		<tspan x="960" dy="1.25em">move around and do stuff idk</tspan>
+		<tspan x="960" dy="1.25em">i’ll finish this up soon</tspan>
+		<tspan x="960" dy="1.25em">i hope that one day,</tspan>
+		<tspan x="960" dy="1.25em">it will be the game of all time</tspan>
+	</text>
 	<text id="level-name" x="80" y="120">1. <tspan font-style="italic">“It will be the game of all time”</tspan></text>
 </svg>
