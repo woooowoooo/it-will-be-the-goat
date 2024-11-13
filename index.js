@@ -118,14 +118,20 @@ export async function loadResources() {
 		sounds[name].muted = settings.muted;
 		sounds[name].volume = settings.volume / 100;
 	}
+	const levelDefs = await window.fetch("levels/defs.svg").then(response => response.text());
+	const levelStyle = await window.fetch("styles/levels.css").then(response => response.text());
 	for (let i = 1; i <= levelAmount; i++) {
 		promises.push(new Promise(async resolve => { // "Inline" SVG for hitbox
 			const levelFile = await window.fetch(`levels/level${i}.svg`).then(response => response.text());
 			levels[`level${i}`] = (new DOMParser()).parseFromString(levelFile, "image/svg+xml");
-			// Add CSS (img SVGs don't support separate stylesheets)
-			const style = document.createElement("style");
-			style.textContent = await window.fetch("styles/levels.css").then(response => response.text());
+			// Add defs (img SVGs don't support external files)
 			const svg = levels[`level${i}`].querySelector("svg");
+			const defs = document.createElementNS("http://www.w3.org/2000/svg", "defs");
+			defs.innerHTML = levelDefs;
+			svg.prepend(defs);
+			// Add CSS
+			const style = document.createElementNS("http://www.w3.org/2000/svg", "style");
+			style.textContent = levelStyle;
 			svg.prepend(style);
 			// Convert SVG to img for rendering
 			const svgString = new XMLSerializer().serializeToString(svg);
