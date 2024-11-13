@@ -1,0 +1,19 @@
+#sky {
+	fill: url(#sky-pattern);
+}
+#hitbox {
+	fill: url(#grass-pattern);
+}
+/* Text */
+.dialogue {
+	font-size: 48px;
+}
+.goat {
+	font-family: Raleway, sans-serif;
+}
+.dev {
+	font-family: Georgia;
+}
+#level-name {
+	font: 500 64px Raleway, sans-serif;
+}

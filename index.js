@@ -122,9 +122,16 @@ export async function loadResources() {
 		promises.push(new Promise(async resolve => { // "Inline" SVG for hitbox
 			const levelFile = await window.fetch(`levels/level${i}.svg`).then(response => response.text());
 			levels[`level${i}`] = (new DOMParser()).parseFromString(levelFile, "image/svg+xml");
+			// Add CSS (img SVGs don't support separate stylesheets)
+			const style = document.createElement("style");
+			style.textContent = await window.fetch("styles/levels.css").then(response => response.text());
+			const svg = levels[`level${i}`].querySelector("svg");
+			svg.prepend(style);
+			// Convert SVG to img for rendering
+			const svgString = new XMLSerializer().serializeToString(svg);
+			initialize(images, `level${i}`, `data:image/svg+xml,${encodeURIComponent(svgString)}`, "img", "load");
 			resolve();
 		}));
-		initialize(images, `level${i}`, `levels/level${i}.svg`, "img", "load"); // Image element for graphical rendering
 	}
 	return Promise.all(promises);
 }
