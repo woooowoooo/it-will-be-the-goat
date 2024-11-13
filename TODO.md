@@ -1,16 +1,23 @@
 # Gameplay
-- [ ] Game idea (IN-PROGRESS)
+- [x] Game idea (IN-PROGRESS)
+- [ ] Dialogue
+
+## Levels
+- [x] Style SVGs with CSS
+- [x] Insert external files in SVG `<img>`s (IN-PROGRESS)
+- [ ] Fix SVG font rendering
+- [x] Fix SVG line-wrapping
 
 ## Movement
 - [x] Movement
-- [ ] Collision
+- [x] Collision (IN-PROGRESS)
 - [ ] Controls
 
 # Experience
 - [x] Title
 
 ## Graphics
-- [ ] Menu image
+- [x] Menu image
 - [x] Teaser image
 - [x] Font (PLACEHOLDER)
 - [x] Terrain art
