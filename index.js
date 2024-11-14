@@ -120,6 +120,8 @@ export async function loadResources() {
 	}
 	const levelDefs = await window.fetch("levels/defs.svg").then(response => response.text());
 	const levelStyle = await window.fetch("styles/levels.css").then(response => response.text());
+	const raleway = await window.fetch("fonts/raleway.woff2").then(response => response.blob()).then(blob => URL.createObjectURL(blob));
+	const ralewayStyle = `@font-face { font-family: "Raleway"; src: url("${raleway}") format("woff2"); }`;
 	for (let i = 1; i <= levelAmount; i++) {
 		promises.push(new Promise(async resolve => { // "Inline" SVG for hitbox
 			const levelFile = await window.fetch(`levels/level${i}.svg`).then(response => response.text());
@@ -131,7 +133,7 @@ export async function loadResources() {
 			svg.prepend(defs);
 			// Add CSS
 			const style = document.createElementNS("http://www.w3.org/2000/svg", "style");
-			style.textContent = levelStyle;
+			style.textContent = levelStyle + ralewayStyle;
 			svg.prepend(style);
 			// Convert SVG to img for rendering
 			const svgString = new XMLSerializer().serializeToString(svg);
