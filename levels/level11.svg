@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg width="1920" height="1280" viewBox="0 0 1920 1280" version="1.2" id="SVGRoot" xmlns="http://www.w3.org/2000/svg">
-	<rect id="sky" style="fill: #dfe3ec;" width="1920" height="1280" x="0" y="0" />
+	<rect id="sky" style="fill: #dfe3ec;" x="0" y="0" width="1920" height="1280" />
 	<path id="hitbox" style="fill: #b6bfc9;" d="
 		M -100,320 h 740 v 80 h -740 Z
 		M 1280,560 h 480 v -240 h 260 v 320 h -740 Z
 		M -100,800 h 740 v 80 h -740 Z
 		M 1280,1040 h 740 v 80 h -740 z" />
-	<circle id="spawnpoint" cx="100" cy="320" />
-	<text id="dialogue" style="font: 48px Raleway;" x="100" y="240">Something isn't right…</text>
-	<text id="dialogue" style="font: 48px Georgia;" x="960" y="480">i ran out of paint money</text>
+	<circle id="spawnpoint" cx="200" cy="320" />
+	<text class="dialogue goat" x="100" y="240">Something isn't right…</text>
+	<text class="dialogue dev" x="960" y="480">i ran out of paint money</text>
 </svg>
